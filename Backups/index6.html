@@ -1,0 +1,1032 @@
+<!DOCTYPE HTML>
+<!--
+	By GHOST @BRAVADOS / 2021 / @Alonso
+-->
+<html>
+	<head>
+		<title>BRAVADOS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" href="news/letterb.png" type="image/x-icon" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+	<style>
+
+	.linea {
+ /* margin: 0px 20px; */
+    width: 100%;
+    border-top: 1px solid #999;
+    position: relative;
+    top: 20px;
+    /* margin: 0 auto; */
+    float: left;
+    z-index: 0;
+  }
+
+.leyenda {
+font-weight: bold;
+    /* float: left; */
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+    background-color: #004750;
+    z-index: 9999;
+    color: #e6e0c5ff;
+    margin-top: -3.2em;
+    position: relative;
+ }
+
+
+	::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #01273a;
+}
+
+::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #002839;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #147775;
+}
+
+
+	.btn{position:absolute;left:100px;top:100px;}
+.btn .grx{      position: absolute;
+    left: 0;
+    top: -9em;
+    background-repeat: no-repeat!important;
+    background-position: center;
+    background: url(https://i.ibb.co/s5kYks1/diwn.png);
+    width: 440px;
+    background-size: 400px;
+    height: 440px;
+    border-radius: 40px;
+    font-size: 30px;
+    font-family: sans-serif;
+    line-height: 40px;
+    text-align: center;}
+.btn.b{left:300px;}
+body{background-color:#004750}
+.btn .hit{    position: absolute;
+    left: 0;
+    top: -9em;
+    background-repeat: no-repeat!important;
+    background-position: center;
+    background: url(https://i.ibb.co/s5kYks1/diwn.png);
+    width: 440px;
+    background-size: 400px;
+    height: 440px;
+    border-radius: 40px;
+    font-size: 30px;
+    font-family: sans-serif;
+    line-height: 40px;
+    text-align: center;}
+
+#calculator {
+    width: 113%;
+   height: 100%;
+    margin: 0;
+    padding: 0;
+    text-indent: -9999px;
+    background: #703224;
+    position: fixed;
+    top: 0px;
+    right: 2592px;
+    z-index: 99999999; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    -webkit-transition-duration: 4.3s;
+    -moz-transition-duration: 4.3s;
+    -o-transition-duration: 4.3s;
+    transition-duration: 4.3s;
+    animation: slideOnLoad 8s 1;
+    -webkit-animation: slideOnLoad  8s 1;
+}
+
+@keyframes slideOnLoad
+{
+    0% {right:-1947px;}
+    0.1% {right:2510px;}
+    100% {right:-1947px;}
+}
+@-webkit-keyframes slideOnLoad
+{
+       0% {right:-1947px;}
+    0.1% {right:2500px;}
+    100% {right:-1947px;}
+}
+
+#calculator:hover {
+    cursor:none;
+}
+
+
+@font-face {
+  font-family: 'Styrene';
+  src: url('../../StyreneA-Regular.otf');
+}
+
+.mouseOver_text {
+  position: relative;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transform: translateY(-50%);
+  top: 50%;
+  text-align: center;
+}
+.mouseOver_text img {
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0 auto;
+}
+.mouseOver_text h1 {
+  font-family: "Futura";
+  margin: 0.5em;
+  letter-spacing: 2px;
+  transition: all 300ms ease-out;
+}
+.mouseOver_text h1 a {
+  text-decoration: none;
+  color: currentColor;
+  display: block;
+}
+.mouseOver_text h1:hover {
+  letter-spacing: 4px;
+}
+
+#previewImage {
+  position: absolute;
+  display: none;
+  color: #fff;
+  z-index: 2;
+}
+#previewImage img {
+  width: 35vw;
+}
+		</style>
+		 <script>
+$(window).load(function () {
+            $(".loader").fadeOut("slow");
+        });
+        </script>
+
+	</head>
+	<body class="landing is-preload">
+
+
+
+
+
+
+
+
+
+
+
+	 <script>
+$(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1 style="
+    opacity: 2;
+    background-image: url(news/logo.png);
+    background-size: 70px;
+    background-repeat: no-repeat;
+    height: 110px;color:transparent;
+    margin: 1em;
+"><a href="index.html">Spectral</a></h1>
+						<nav id="nav">
+
+<header>
+        <nav aria-label="Main Navigation" data-module-nav="m3">
+            <div class="c-header || o-container -medium">
+                <a class="c-header_logo" href="/">
+                    <span class="u-screen-reader-text">Ir al inicio</span>
+                    <svg role="img" alt="Brews &amp; Grooves Logo"><use xlink:href="assets/images/sprite.svg#logo"></use></svg>
+                </a>
+
+               <button class="c-nav_toggler" aria-expanded="false" aria-controls="#main-nav" data-nav="toggler" style="
+    width: 200px;
+">
+                    <span class="c-nav_toggler_label" data-nav="togglerLabel" data-nav-close="Cerrar" data-nav-open="Menu">Menu</span>
+                    <span aria-hidden="true" class="c-nav_toggler_icon">
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+
+            <div class="c-nav" id="main-nav" role="menu">
+                <div class="c-nav_outer">
+                    <div class="c-nav_inner || o-container -medium">
+                        <ul class="c-nav_menu || c-big-links -menu" data-module-big-links="m4">
+                            <li class="c-nav_menu_item || c-big-links_item"><a class="c-nav_menu_link || c-big-links_link" href="all-pairings" data-big-links="split" data-before="Demo de texto" style=""><div style="display: block; text-align: left; position: relative;"><span>Demo &amp; show</span></div><div style="display: block; text-align: left; position: relative;"><span>Menu</span></div></a></li>
+                            <li class="c-nav_menu_item || c-big-links_item"><a class="c-nav_menu_link || c-big-links_link" href="manifesto" data-big-links="split" data-before="Acerca de Bravados" style=""><div style="display: block; text-align: left; position: relative;"><span>Link 2</span></div></a></li>
+                            <li class="c-nav_menu_item || c-big-links_item"><a class="c-nav_menu_link || c-big-links_link" href="mailto:hello@test.com" data-big-links="split" data-before="Alguna pregunta?" style=""><div style="display: block; text-align: left; position: relative;"><span>Contáctanos</span></div></a></li>
+                            <li class="c-nav_menu_recommend-cta">
+                               <a href="mailto:pairings@demo.com" class="c-rounded-button -large is-inview" style="
+    font-size: 0.7em;
+">
+                                    <span class="c-rounded-button_label">Recommend </span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="c-nav_footer">
+                            <a href="/credits" class="c-button"><span class="c-button_label">Credits</span></a>
+                            <ul class="c-nav_social">
+                                <li>
+                                  <a href="http://www.facebook.com/" class="icon brands fa-facebook-f" >  
+                                        <span class="u-screen-reader-text">Follow us on Facebook</span>
+                                  
+							<span class="label">Facebook</span>
+						
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" class="icon brands  fa-instagram" > 
+                                        <span class="u-screen-reader-text">Follow us on Insta</span>
+                                  
+							<span class="label">Instagram</span>
+						
+                                    </a>
+                                </li>
+                                <li>
+                                     <a href="https://twitter.com/" class="icon brands  fa-twitter" > 
+                                        <span class="u-screen-reader-text">Follow us on twitter</span>
+                                  
+							<span class="label">Twitter</span>
+						
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header><link id="stylesheet" rel="stylesheet" href="./main2.css" media="print" onload="this.media='all'; this.onload=null; this.isLoaded=true"><script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CCustomEvent%2CElement.prototype.matches%2CNodeList.prototype.forEach%2CAbortController%2CElement.prototype.append%2CElement.prototype.remove" crossorigin="anonymous"></script>
+
+    <script src="https://www.brewsandgrooves.com/assets/scripts/vendors.js?v=1.1" defer></script>
+    <script src="https://www.brewsandgrooves.com/assets/scripts/app.js?v=1.1" defer></script>
+
+
+
+
+
+							
+						</nav>
+					</header>
+
+ <a href="#" target="_blank">
+    <div id="calculator">Novated Lease Calculator</div>
+</a>
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<section id="banner">
+						<div class="inner">
+							<h2></h2><!--
+							<p>Another fine responsive<br />
+							site template freebie<br />
+							crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
+							<ul class="actions special">
+								<li><a href="#" class="button primary">Activate</a></li>
+							</ul> Banner -->
+						</div>
+					 <a href="#one" >
+
+
+					 <div class="more scrolly" style="
+
+
+">
+
+
+<div class="containeer" style="">
+  
+<div class="left"></div>
+<div class="right"></div>
+  
+  
+</div>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="./script2.js"></script>
+
+
+
+
+
+
+
+
+
+
+<button class="c-magnetic-btn u-relative" 
+				data-threshold="60" 
+				data-ratio="3.5"
+				data-max="100"
+				data-scale="1.1"
+				data-ease="0.225"   style="	
+	overflow:visible;
+	margin:0;
+	padding:0;
+	outline:0;    margin-top: -11em;
+	border:0;
+	width: 310px;
+	color:inherit;
+	vertical-align:middle;
+	text-align:center;
+	text-transform:none;
+	font:inherit;
+	line-height:normal;
+	cursor:pointer;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none">
+	<span class="t-btn-label u-flex u-center-xy"></span>
+	<span class="o-circle u-fit u-absolute u-pos-tl"></span>
+</button>
+</div></a>
+					</section>
+
+				
+			<section id="cta" class="wrapper style4 " style="
+    background-image: none!important;
+">
+						<div class="inner">
+				<div class="mouseOver_text" style="
+    transform: translate(6px, -140px)
+">
+		 <h5 style="
+    font-size: 11px;
+    line-height: 21em;
+"><a class="screenshot fade" href="#" rel="img/demo5/17.jpg" style="
+      font-size: 1.9em;
+    color:#e5dfc4;
+   
+    /* margin-top: -224px; */
+">TOCAR UNA BODA NO ES SOLO DARLE</a></h5>
+  <h1><a class="screenshot fade" href="#" rel="img/demo5/17.jpg" style="
+    font-size: 16em;color:#e5dfc4;
+    font-family: impact!important;
+">PLAY</a></h1>
+
+
+
+<br><br><br><br><br><br><br>
+<p class="fade">ES HACER UN  <a class="screenshot" href="#" rel="img/demo5/20.jpg" style="font-style:italic">DISEÑO</a> DE AUDIO,</p><br><br>
+<p class="fade">CREAR UN <a class="screenshot" href="#" rel="img/demo5/2.jpg" style="font-style:italic">MOOD</a> CON LA MÚSICA</p><br><br>
+<p class="fade">ADAPTAR LA <a class="screenshot" href="#" rel="img/demo5/3.jpg" style="font-style:italic">ILUMINACIÓN</a> AL VENUE</p>
+
+  <h1><a class="screenshot" href="#" rel="img/demo5/12.jpg">Demo #1</a></h1>
+  <h1><a class="screenshot" href="#" rel="img/demo5/11.jpg">Demo #2</a></h1>
+  <h1><a class="screenshot" href="#" rel="img/demo5/1.jpg">Demo #3</a></h1>
+  <h1><a class="screenshot" href="#" rel="img/demo5/15.jpg">Demo #4</a></h1>
+  <h1><a class="screenshot" href="#" rel="img/demo5/16.jpg">Demo #5</a></h1>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script><script  src="./scripttt.js"></script>
+
+						</div>
+
+					</section>
+
+
+
+
+
+
+
+
+<!-- One -->
+					<section id="one" class="wrapper style1 special" style="background-color: #003633ff!important;">
+<div class="inner"></div>
+				
+
+
+						<div class="inner">
+
+							<header class="major">
+<img src="news/circle.png" style="width:165px;margin:0 auto;" id="leftgear">
+</br>
+</br>
+
+<p style="
+      max-width: 60%;
+    margin: 0 auto;
+    color: #5b939d;
+    padding-bottom: 5%;color:#fff;
+"  class="fade">Somos los DJs que crearan el mejor ambiente en tu boda.
+Trabajamos en los mejores locaciones de todo Mexico, y 
+tenemos el expertise necesario para lograr que tu boda sea
+toda una experiencia en cualquier lugar.</p>
+
+</br>
+<h5 style="border:0"  class="fade">Somos socios de los dos venues mas exclusivos de Valle de Bravo:</h5><br />
+<img src="images/asset1.png" style="width:80px;margin:0 auto;"><br />
+<img src="images/Logos_gruposerra_basilico.png" style="width:170px;margin:0 auto;"><br />
+
+<p style="
+      max-width: 63%;
+    margin: 0 auto;
+    color: #5b939d;
+    padding-bottom: 5%;
+"  class="fade"> Emb estas locaciones, el diseño de audio estuvo a cargo de Audioco.
+Esta compañia brinda soporte , asesoria y servicios de audio a
+diversos artistas de talla internacional asi como festivales
+nacionales e internacionales como Corona Capital, EDC y VL.</p>
+<img src="images/audioco.png" style="width:140px;margin:0 auto;"><br />
+
+
+<!--
+								<h2>Arcu aliquet vel lobortis ata nisl<br />
+								eget augue amet aliquet nisl cep donec</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p> -->
+							</header>
+						
+						</div>
+					</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+<div class="inner" style="	     background-image: url(images/image2.png);
+    height: 50px;
+    background-size: 220px;
+    background-repeat: no-repeat;
+    width: 221px;
+    right: 0;
+    background-position: center;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    margin-top: -8%;
+    z-index: 9;"></div>
+				
+
+<div class="inner" style="
+    width: 70em;
+">
+
+
+
+
+
+							<header class="major">
+</br>
+<h1 style="border:0;line-height: 1em;font-size: 2.3em;background-color:#004750ff; color: #e6e0c5ff;" class="fade">NADIE PUEDE NEGAR QUE LA MÚSICA<br>
+ES LO MÁS IMPORTANTE EN UNA BODA.</h1><br />
+<p style="
+      max-width: 63%;
+    margin: 0 auto;
+    color: #fff;
+    padding-bottom: 5%;
+"  class="fade">Contrata el sevicio más premium de la industria</p>
+<!--
+								<h2>Arcu aliquet vel lobortis ata nisl<br />
+								eget augue amet aliquet nisl cep donec</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p> -->
+							</header>
+						
+						</div>
+					</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Two -->
+				<section id="two" class="wrapper alt style2" style="
+    padding-bottom: 10%;
+">
+
+
+
+
+
+
+
+
+<section class="spotlight" style="margin-bottom:5%;">
+							<div class="image"><img src="images/pic01.jpg" alt="" /><div class="snow">	</div></div><div class="content" style="
+    width: 98%;
+    margin: 0;
+    /* padding: 11%; */
+    max-width: inherit;padding-top: 36.66%;
+">
+								<h2 style="
+font-size: 4em;
+    font-family: monospace;
+    line-height: 60px;
+    margin: 0%;
+    width: max-content;
+">LOS MEJORES<br /> DJS<br />
+								</h2>
+								<p style="    font-size: 0.7em;
+    /* margin-left: 58%; */
+    margin-top: -13em;
+    text-align: right;
+    width: 40%;
+    float: right;">Todos nuestros DJs se especializan en este tipo de eventos,
+y se saben adaptar al mood de la gente, sacando lo mejor de tu boda.</p>
+							</div>
+						</section>
+
+
+
+
+
+						<section class="spotlight">
+
+							<div class="image"><img src="images/pic02.jpg" alt="" />
+<div class="snowtwo">	</div>
+
+							</div>
+<div class="content" style="
+    left: 6.7%;
+    text-align: right;
+">
+<p style="font-size: 0.7em;margin-left: 30%;margin-top: -75px;">Contamos con la mejor marca del mundo en audio e iluminacion,
+y elegimos cuidadosamente el equipo ideal para cada venue.</p>
+</div>
+
+							<div class="content" style="
+    padding-right: 0%;
+">
+							<h2 style="
+     font-size: 4em;
+    font-family: monospace;
+    line-height: 60px;text-align: right;
+    margin: 4%;
+">LA MEJOR<br /> TECNOLOGÍA<br />
+								</h2>
+								
+							</div>
+						</section>
+						<section class="spotlight" style="margin-bottom:5%;">
+							<div class="image"><img src="images/pic03.jpg" alt="" /><div class="snow" style="
+    margin-top: -21em;
+">	</div></div><div class="content" style="
+    width: 98%;
+    margin: 0;
+    /* padding: 11%; */
+    max-width: inherit;padding-top: 36.66%;
+">
+								<h2 style="
+font-size: 4em;
+    font-family: monospace;
+    line-height: 60px;
+    margin: 0%;
+    width: max-content;
+">LA MEJOR<br /> SELECCIÓN MUSICAL<br />
+								</h2>
+								<p style="    font-size: 0.7em;
+    /* margin-left: 58%; */
+    margin-top: -13em;
+    text-align: right;
+    width: 40%;
+    float: right;">Antes del evento tendras una entrevista con tu DJ, 
+Quien se encargara de crear un estilo personalizado para ustedes.</p>
+							</div>
+						</section>
+
+<section class="spotlight">
+
+							<div class="image"><img src="images/pic04.jpg" alt="" />
+<div class="snowtwo">	</div>
+
+							</div>
+
+
+							<div class="content" style="
+    width: 76%;
+    margin: 0;
+    /* padding: 11%; */
+    max-width: inherit;padding-top: 36.66%;
+">
+							<h2 style="
+     font-size: 4em;
+    font-family: monospace;
+    line-height: 60px;text-align: right;
+    margin: -4%;
+">EL MEJOR<br /> BOOTH<br />
+								</h2>
+								<p style="    font-size: 0.7em;
+    margin-left: 30%;
+    margin-top: -75px;
+text-align: right;
+  
+    float: left;
+    width: 47.7%;
+    margin: 0;">Nuestra cabina fue diseñada por Moda In Casa,
+y complementara visualmente el estilo de tu boda, sin importan cual sea.</p>
+							</div>
+						</section>
+
+					</section>
+
+
+		<!-- One -->
+					<section id="one" class="wrapper style1 special" style="
+background-image: url(images/capi.jpg);
+    background-size: cover;    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 1100px;
+">
+<div class="inner" style="	     background-image: url(images/image3.png);
+    height: 30px;
+    background-size: 205px;
+    background-repeat: no-repeat;
+    width: 205px;
+    right: 0;
+    background-position: center;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    margin-top: -7.6%;
+    z-index: 9;"></div>
+				
+
+
+						<div class="inner">
+
+							<header class="major">
+</br>
+
+
+<br />
+<p style="
+      max-width: 63%;
+    margin: 0 auto;
+    color: #fff;
+    padding-bottom: 5%;
+"></p>
+	
+<!--
+							
+								<h2 style="
+    position: relative;
+    bottom: -35px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    font-size: 101px;
+">CAPI CERVANTES<br>eget augue amet aliquet nisl cep donec</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p> -->
+							</h2>
+<!--
+							
+								eget augue amet aliquet nisl cep donec</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p> -->
+							</header>
+						
+						</div>
+					</section>
+
+
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2 style="
+  left: 0;
+    margin: 0 auto;
+    font-size: 201px;
+    font-family: impact!important;
+    letter-spacing: 0px;
+    width: 100%;
+    margin-top: -23%;
+    position: absolute; color: #e6e0c5ff;
+"  class="fade">CAPI CERVANTES<br></h2>
+
+<img src="images/cic.png" style="max-height: 550px;margin: 0 auto;margin-top: -22em;margin-bottom:3%;right: 0;position: absolute;left: 0;">
+
+<img src="images/text1399.png" style="max-height:150px;margin: 0 auto;margin-top: 2em;margin-bottom:3%;" class="fade">
+
+								<br />
+
+
+
+
+<svg id="text-container" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
+  <path id="text-curve" d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0" fill="none"/>
+  
+  <text y="40" font-size="22">
+    <textPath id="text-path" href="#text-curve" startOffset="100"  style="
+    font-size: 0.5em;
+" >
+      "Cada boda tiene un setlist único; se trata de entender a los novios, saber leer a los invitados y lograr que la pista siempre este llena"
+    </textPath>
+  </text>
+</svg>
+								
+
+
+			
+							</header>
+
+
+
+
+
+
+						</div>
+					</section>
+
+				<!--
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Arcue ut vel commodo</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="#" class="button fit primary">Activate</a></li>
+								<li><a href="#" class="button fit">Learn More</a></li>
+							</ul>
+						</div>
+
+					</section>
+
+ CTA -->
+
+
+
+
+
+
+			 <!--CTA
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								
+							</header>
+							<ul class="actions stacked">
+							
+							</ul>
+						</div>
+
+					</section>
+
+ -->
+
+
+
+
+
+<script>
+$(window).scroll(function() {
+var theta = $(window).scrollTop() / 3 % Math.PI;
+$('#leftgear').css({ transform: 'rotate(' + theta + 'rad)' });
+$('#rightgear').css({ transform: 'rotate(-' + theta + 'rad)' });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+	<section id="cta" class="wrapper style4" style="
+    background-image: none!important;
+">
+				<div style="width:100%;margin:auto;">
+<div class="linea"></div><br />
+<div class="leyenda">MÁS DE 17 AÑOS DE<br /> 
+EXPERIENCIA EN EL MEDIO</div>
+
+</div>
+
+					</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special" style="background-color:#003633ff">
+<div class="inner" style="	     background-image: url(images/image4.png);
+    height: 50px;
+    background-size: 220px;
+    background-repeat: no-repeat;
+    width: 221px;
+    right: 0;
+    background-position: center;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    margin-top: -8.7%;
+    z-index: 9;"></div>
+				
+
+<div class="inner" style="
+    width: 70em;
+">
+
+
+
+
+
+							<header class="major">
+
+<h1 style="border:0;line-height: 1em;font-size: 1.8em;color: #e6e0c5ff;margin-top: -4%;" class="fade">PIDE TU COTIZACIÓN</h1><br />
+
+<!--
+								<h2>Arcu aliquet vel lobortis ata nisl<br />
+								eget augue amet aliquet nisl cep donec</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p> -->
+							</header>
+						
+						</div>
+					</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; BRAVADOS</li><li><a href="#"> 2021</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		<script  src="scripttext.js"></script>
+		<script  src="script.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
+	</body>
+</html>

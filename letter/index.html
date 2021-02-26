@@ -1,0 +1,144 @@
+<html class="" lang="en"> 
+<head>
+	<meta charset="utf-8">
+	<title>Prueba animacion 1</title>
+
+	<link rel="stylesheet" href="mainlocura.css">
+
+</head>
+<body>
+   
+
+
+ 
+ <style>
+
+
+.c-hero_title {
+    width:100%;
+    margin:0;
+    line-height:.8;
+    text-transform:uppercase;
+    padding-top:1rem
+}
+@media (min-width:700px) {
+    .c-hero_title {
+        display:flex;
+        justify-content:space-between;
+        font-size:21vw
+    }
+}
+@media (max-width:699px) {
+    .c-hero_title {
+        display:block;
+        font-size:31vw
+    }
+}
+.c-hero_title_word_wrap {
+    position:relative;
+    opacity:0
+}
+.c-hero_title_word_wrap,.c-hero_title_word_wrap>div {
+    overflow:visible!important
+}
+.c-hero_title_word_wrap.is-split {
+    opacity:1
+}
+@media (min-width:700px) {
+    .c-hero_title_word:first-child .c-hero_title_word_wrap {
+        width: 92vw;
+    margin: 0 auto;
+            
+
+    }
+}
+@media (max-width:699px) {
+    .c-hero_title_word_wrap {
+        width:100%;
+        display:block;
+        margin:auto;
+        text-align:center;
+        overflow:hidden
+    }
+    .c-hero_title_word_wrap>div {
+        display:inline-block!important
+    }
+}
+.c-hero_title_word {
+    white-space:nowrap
+}
+.c-hero_title_word:first-child .c-hero_title_parallax div {
+    padding-top:.5em
+}
+@media (min-width:700px) {
+    .c-hero_title_word:first-child {
+        margin-left:-1.4vw;    text-align: center;
+    margin: 0 auto;
+    }
+    .c-hero_title_word:nth-child(2) {
+        margin-right:-.8vw
+    }
+}
+@media (max-width:699px) {
+    .c-hero_title_word {
+        text-align:center
+    }
+}
+.c-hero_title_parallax {
+    display:inline-block;
+    overflow:hidden
+}
+.c-hero_title_parallax>div {
+    transform:translateY(100%);
+    transition:transform 1.2s cubic-bezier(.86,0,.07,.995)
+}
+@media (min-width:700px) {
+    .c-hero_title_parallax>div {
+        padding-bottom:2.5rem; font-size: 200px;
+    font-family: impact!important;
+    }
+}
+html.is-loaded .c-hero_title_parallax.is-inview>div {
+    transform:none
+}
+
+   </style>
+
+	<main data-load-container data-template="home">
+    <div class="o-scroll" data-module-scroll="main">
+        <section class="c-hero" data-scroll-section>
+            <div class="u-anim-page" data-scroll data-scroll-repeat>
+                <div class="o-container" id="hero" data-scroll>
+                    <h1 class="c-heading || c-hero_title">
+                        <span class="c-hero_title_word u-none@to-small">
+                            <span class="c-hero_title_word_wrap c-split-title" data-module-split="hero-1" data-split-type="chars" data-scroll>
+                                <span class="c-hero_title_parallax" data-scroll data-scroll-speed="1" data-scroll-position="top">C</span>
+                                <span class="c-hero_title_parallax" data-scroll data-scroll-speed="-2" data-scroll-position="top">A</span>
+                                <span class="c-hero_title_parallax" data-scroll data-scroll-speed="4" data-scroll-position="top">P</span>
+                                <span class="c-hero_title_parallax" data-scroll data-scroll-speed="-4" data-scroll-position="top">I</span>
+                                <span class="c-hero_title_parallax" data-scroll data-scroll-speed="-6" data-scroll-position="top" style="    margin-left: 45px;">C</span>
+                                <span class="c-hero_title_parallax" data-scroll data-scroll-speed="1" data-scroll-position="top">E</span>
+                                <span class="c-hero_title_parallax" data-scroll data-scroll-speed="4" data-scroll-position="top">R</span>
+                                <span class="c-hero_title_parallax" data-scroll data-scroll-speed="-4" data-scroll-position="top">V</span>
+  <span class="c-hero_title_parallax" data-scroll data-scroll-speed="-2" data-scroll-position="top">A</span>
+    <span class="c-hero_title_parallax" data-scroll data-scroll-speed="1" data-scroll-position="top">N</span>
+      <span class="c-hero_title_parallax" data-scroll data-scroll-speed="-4" data-scroll-position="top">T</span>
+        <span class="c-hero_title_parallax" data-scroll data-scroll-speed="1" data-scroll-position="top">E</span>
+          <span class="c-hero_title_parallax" data-scroll data-scroll-speed="4" data-scroll-position="top">S</span>
+                            </span>
+                        </span>
+                        </span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+         <div style="width:400px;height:2000px;"></div>
+        </main>
+		<script src="https://lekhoa.com/wp-content/themes/lekhoa/dist/scripts/vendors.js"></script>
+		<script src="https://lekhoa.com/wp-content/themes/lekhoa/dist/scripts/app.js"></script>
+
+
+
+
+	</body>
+</html>
